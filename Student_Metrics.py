@@ -209,37 +209,6 @@ st.altair_chart(line_engagement,use_container_width=True)
 st.write(' ')
 st.write(' ')
 
-st.subheader('Percentage of Mandatory Lessons Completed')
-
-st.write (' ')
-st.write (' ')
-
-line_time_pct_mandatory_completed = alt.Chart(df_engagement_attendance_student_filtered).mark_line(point=True).encode(
-    x=alt.X(
-        'week:O',
-        axis=alt.Axis(
-            labelAngle=0,
-            title='Week'
-        )
-    ),
-    y=alt.Y(
-        'percentage_mandatory_complete',
-        axis=alt.Axis(
-            title='% Mandatory Lessons Completed',
-            format='%'
-        )
-    ),
-    tooltip=[
-            alt.Tooltip('week:O',title='Week'),
-            alt.Tooltip('percentage_mandatory_complete',title='Pct Mandatory Lessons Complete',format='0.1%')
-    ],
-)
-
-st.altair_chart(line_time_pct_mandatory_completed, use_container_width=True)
-
-st.write(' ')
-st.write(' ')
-
 st.subheader('Completed Questions Sets')
 
 st.write(' ')
