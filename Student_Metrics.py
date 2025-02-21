@@ -38,7 +38,7 @@ if not check_password():
 
 ## Read data from CSV files
 df_engagement_attendance = pd.read_csv('./student-data/institution-cdu-engagement-data.csv',parse_dates=['start_date','end_date'])
- df_test_scores = pd.read_csv('./student-data/institution-cdu-test-data.csv',parse_dates=['test_date'])
+df_test_scores = pd.read_csv('./student-data/institution-cdu-test-data.csv',parse_dates=['test_date'])
 
 ## Create dashboard filters
 student_id = st.selectbox("Choose a student:", list(df_engagement_attendance['student_id'].unique()))
