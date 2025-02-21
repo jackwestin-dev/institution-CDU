@@ -243,7 +243,7 @@ st.dataframe(df_test_scores_student_filtered[['test_name','test_date','actual_ex
 st.write(' ')
 st.write(' ')
 
- point_exam_scores = alt.Chart(df_test_scores_student_filtered).mark_point().transform_fold(
+point_exam_scores = alt.Chart(df_test_scores_student_filtered).mark_point().transform_fold(
      fold=['actual_exam_score'],
      as_=['variable','value']
  ).encode(
@@ -264,4 +264,4 @@ st.write(' ')
      color=alt.Color('variable:N',legend=alt.Legend(title='Practice Exam Score',orient='bottom'))
  )
 
- st.altair_chart(point_exam_scores,use_container_width=True)
+st.altair_chart(point_exam_scores,use_container_width=True)
