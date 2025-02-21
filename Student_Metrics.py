@@ -38,7 +38,7 @@ if not check_password():
 
 ## Read data from CSV files
 df_engagement_attendance = pd.read_csv('./student-data/institution-cdu-engagement-data.csv',parse_dates=['start_date','end_date'])
-# df_test_scores = pd.read_csv('./student-data/institution-1-test-data.csv',parse_dates=['test_date'])
+ df_test_scores = pd.read_csv('./student-data/institution-cdu-test-data.csv',parse_dates=['test_date'])
 
 ## Create dashboard filters
 student_id = st.selectbox("Choose a student:", list(df_engagement_attendance['student_id'].unique()))
@@ -57,8 +57,8 @@ class_participation = df_engagement_attendance_avg.loc['class_participation']
 homework_participation = df_engagement_attendance_avg.loc['homework_participation']
 overall_participation = (class_participation + homework_participation) / 2
 
-# df_test_scores['test_date'] = df_test_scores['test_date'].dt.date
-# df_test_scores_student_filtered = df_test_scores[df_test_scores['student_id'] == student_id]
+ df_test_scores['test_date'] = df_test_scores['test_date'].dt.date
+ df_test_scores_student_filtered = df_test_scores[df_test_scores['student_id'] == student_id]
 
 ## Create sections and render dashboard
 st.write(' ')
